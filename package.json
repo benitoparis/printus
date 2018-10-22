@@ -1,0 +1,14 @@
+{
+  "name": "printus",
+  "private": true,
+  "dependencies": {
+    "@rails/webpacker": "3.5",
+    "bootstrap": "3",
+    "jquery": "^3.3.1",
+    "postcss-smart-import": "^0.7.6"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "2.11.2",
+    "webpack-manifest-plugin": "^2.0.4"
+  }
+}

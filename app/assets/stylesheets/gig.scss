@@ -1,0 +1,173 @@
+// Place all the styles related to the gig controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.flexdate{
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+
+.menuyear{
+  padding: 10px;
+  border-color: 3px;
+  margin-top: 10px;
+  letter-spacing:3px;
+
+  .flexbox{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap:wrap;
+  }
+
+}
+
+#range{
+  background-color:#c5e8ec;
+  width:100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+
+
+.dashboard{
+  background-color:#c5e8ec;
+  padding: 10px;
+  border-color: 3px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+
+  .header{
+        font-weight: bold;
+  }
+
+  .myinline{
+    float:left;
+  }
+
+
+hr{
+  height: 2px;
+  background-color:#FFF;
+}
+
+  ul{
+    padding:0px;
+
+  li{
+    padding:5px;
+  }
+
+}
+
+.flexbox{
+  display:flex;
+  flex-direction: row;
+
+    .flexitem2{
+      width:180px;
+      background-color: #c5e8ec;
+      border-width: 2px;
+      text-align:center;
+    }
+
+
+    .redcolor{
+    background-color: #FF0000;
+    padding: 5px;
+
+    }
+
+    .flexitem1{
+      width:500px;
+      background-color: #c5e8ec;
+      border-width: 2px;
+      text-align:left;
+    }
+
+  }
+
+}
+
+
+
+a{
+text-decoration: none;
+}
+
+li{
+list-style-type: none;
+}
+
+
+
+.dashboard-yearly{
+  background-color:#D8D8D8;
+  padding: 10px;
+  border-color: 3px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+
+  .header{
+        font-weight: bold;
+  }
+
+  .myinline{
+    float:left;
+  }
+
+
+hr{
+  height: 2px;
+  background-color:#FFF;
+}
+
+  ul{
+    padding:0px;
+
+  li{
+    padding:5px;
+  }
+
+}
+
+.flexbox{
+  display:flex;
+  flex-direction: row;
+
+    .flexitem2{
+      width:180px;
+      border-width: 2px;
+      text-align:center;
+    }
+
+
+    .redcolor{
+    background-color: #FF0000;
+    padding: 5px;
+
+    }
+
+    .flexitem1{
+      width:500px;
+      border-width: 2px;
+      text-align:left;
+    }
+
+  }
+
+}
+
+.bg-light{
+  background-color:#c5e8ec;
+}
+
+
+.active{
+  background-color:#c5e8ec;
+}
+

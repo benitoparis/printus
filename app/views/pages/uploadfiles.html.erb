@@ -1,0 +1,62 @@
+
+<div class="container">
+
+  <% if @month == nil || @year == nil %>
+
+    <div class="row">
+      <div class="col-lg-6">
+
+
+      <%= form_tag('/upload', multipart: true, class:'formuploadfiles') do %>
+
+
+      <div class="form-group">
+        <label for="month"> Mois à mettre à jour</label>
+
+        <%= select_tag 'month', options_for_select({ "January" => 1, "February" => 1, "March" => 3, "April" => 4, "May" => 5, "June" => 6, "july" => 7, "August" => 8, "September" => 9, "October" => 10, "November" => 11,"December" => 12 }) %>
+
+    <!--     <%= select_tag 'month', options_for_select([ "January", "February", "march", "april", "may", "june", "july","august", "september", "October", "November", "December" ]) %> -->
+
+         <label for="year"> Année à mettre à jour</label>
+        <%= select_tag 'year', options_for_select([ Date.today.strftime("%Y"), Date.today.strftime("%Y").to_i - 1, Date.today.strftime("%Y").to_i - 2, Date.today.strftime("%Y").to_i- 3, Date.today.strftime("%Y").to_i - 4, Date.today.strftime("%Y").to_i - 5, Date.today.strftime("%Y").to_i - 6])%>
+      </div>
+
+      <div class="form-group">
+        <label for="fileedt">Récap mensuel EDT</label>
+        <%= file_field_tag 'fileedt', class: 'form-control' %>
+      </div>
+
+<!--
+      <div class="form-group">
+        <label for="filececurity">Fichiers Cecurity</label>
+        <%= file_field_tag 'filececurity', class: 'form-control' %>
+        <%= file_field_tag 'filececurity', class: 'form-control' %>
+        <%= file_field_tag 'filececurity', class: 'form-control' %>
+        <%= file_field_tag 'filececurity', class: 'form-control' %>
+        <%= file_field_tag 'filececurity', class: 'form-control' %>
+        <%= file_field_tag 'filececurity', class: 'form-control' %>
+      </div>
+      -->
+
+
+      <label for="filececurity[]">Fichiers Cecurity</label>
+      <%= file_field(:post, :image, :multiple => true, :name => 'filececurity[]') %>
+
+
+
+      <%= submit_tag 'Submit', class: 'btn btn-primary' %>
+      <% end %>
+
+      </div>
+    </div>
+
+<% else %>
+
+<div class="span5" style="margin-top:20px;">
+  <p>Les données ont été traitées avec succès pour <%= @month %> / <%= @year %></p>
+  <%= link_to "Insérer les données", retrieve_path(year:@year,month:@month), class: 'btn btn btn-primary' %>
+</div>
+<% end %>
+
+
+</div>

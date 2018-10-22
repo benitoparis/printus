@@ -1,0 +1,156 @@
+<div class="container">
+  <h2> Quantité estimée VS quantité facturée </h2>
+
+<%= link_to "Télécharger l'historique des données", "/downloads/alldatas.csv", data: { no_turbolink: true }, class:'btn btn-primary' %>
+
+<div class="menuyear">
+  <ul class="flexbox" id="yearlist">
+    <% @years_array.each do |item| %>
+      <% if item.year > 2000 %>
+        <li class="navbar-wagon-item navbar-wagon-link"><%= item.year %></li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+
+
+  <div id="range" class="hidden">
+    <div id="yearlink"><a href="">    Cumul Annuel</a></div>
+    <hr>
+    <div id="monthlist">
+      <div class="flexdate">
+        <div class="bg-light">
+          <ul>
+            <li class="navbar-wagon-item navbar-wagon-link"><a href="">Janvier</a></li>
+            <li class="navbar-wagon-item navbar-wagon-link"><a href="">Février</a></li>
+            <li class="navbar-wagon-item navbar-wagon-link"><a href="">Mars</a></li>
+            <li class="navbar-wagon-item navbar-wagon-link"><a href="">Avril</a></li>
+            <li class="navbar-wagon-item navbar-wagon-link"><a href="">Mai</a></li>
+            <li class="navbar-wagon-item navbar-wagon-link"><a href="">Juin</a></li>
+          </ul>
+      </div>
+      <div class="bg-light">
+        <ul>
+          <li class="navbar-wagon-item navbar-wagon-link"><a href="">Juillet</a></li>
+          <li class="navbar-wagon-item navbar-wagon-link"><a href="">Aout</a></li>
+          <li class="navbar-wagon-item navbar-wagon-link"><a href="">Septembre</a></li>
+          <li class="navbar-wagon-item navbar-wagon-link"><a href="">Octobre</a></li>
+          <li class="navbar-wagon-item navbar-wagon-link"><a href="">Novembre</a></li>
+          <li class="navbar-wagon-item navbar-wagon-link"><a href="">Décembre</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% if !@month.nil? %>
+
+  <h4> Mois : <%= @month %> Année : <%= @year %></h4>
+  <div>
+    <div class="dashboard">
+      <ul class="flexbox header">
+        <li class="flexitem1">Titre</li>
+        <li class="flexitem2">Année</li>
+        <li class="flexitem2">Mois</li>
+        <li class="flexitem2">Quantité estimée</li>
+        <li class="flexitem2">Quantité facturée EDT</li>
+        <li class="flexitem2">Delta</li>
+      </ul>
+      <hr>
+      <ul class="flexbox header">
+        <li class="flexitem1">Total mensuel</li>
+        <li class="flexitem2"></li>
+        <li class="flexitem2"></li>
+        <li class="flexitem2"><%= @sommeinterne %></li>
+        <li class="flexitem2"><%= @sommeedt  %></li>
+
+      <% if (@sommeedt - @sommeinterne) > 1 %>
+        <li class="flexitem2 redcolor"><%= @sommeedt - @sommeinterne %></li>
+      <% else %>
+      <li class="flexitem2"><%= @sommeedt - @sommeinterne %></li>
+      <% end %>
+      </ul>
+      <hr>
+      <ul>
+
+
+      <% @gigssorted.each do |item| %>
+        <li>
+          <ul class="flexbox">
+            <li class="flexitem1"><%= item.title %></li>
+            <li class="flexitem2"><%= item.year %></li>
+            <li class="flexitem2"><%= item.month %></li>
+            <li class="flexitem2"><%= item.quantity_interne %></li>
+            <li class="flexitem2"><%= item.quantity_edt %></li>
+            <% if (item.quantity_edt - item.quantity_interne) > 1 %>
+            <li class="flexitem2 redcolor"><%= item.quantity_edt - item.quantity_interne %></li>
+            <% else %>
+            <li class="flexitem2"><%= item.quantity_edt - item.quantity_interne %></li>
+            <% end %>
+          </li>
+          </ul>
+        </li>
+      <% end %>
+      </ul>
+    </div>
+  </div>
+
+  <% end %>
+
+
+
+<% if @month.nil? %>
+
+    <div class="dashboard-yearly">
+      <ul class="flexbox header">
+        <li class="flexitem1">Titre</li>
+        <li class="flexitem2">Année</li>
+        <li class="flexitem2">Mois</li>
+        <li class="flexitem2">Quantité estimée</li>
+        <li class="flexitem2">Quantité facturée EDT</li>
+        <li class="flexitem2">Delta</li>
+      </ul>
+      <hr>
+      <ul class="flexbox header">
+        <li class="flexitem1">Cumul annuel</li>
+        <li class="flexitem2"></li>
+        <li class="flexitem2"></li>
+      <% @stats_year.each do |stats| %>
+        <li class="flexitem2"><%= stats.total_estimated_quantity %></li>
+        <li class="flexitem2"><%= stats.total_billed_quantity %></li>
+      <% if stats.delta > 1 %>
+        <li class="flexitem2 redcolor"><%= stats.delta %></li>
+      <% else %>
+        <li class="flexitem2"><%= stats.delta %></li>
+      <% end %>
+      </ul>
+
+      <hr>
+
+      <ul>
+       <% @stats_overview.each do |stats| %>
+        <li>
+          <ul class="flexbox">
+            <li class="flexitem1"><%= stats.title %></li>
+            <li class="flexitem2"></li>
+            <li class="flexitem2"></li>
+            <li class="flexitem2"><%= stats.total_estimated_quantity %></li>
+            <li class="flexitem2"><%= stats.total_billed_quantity %></li>
+            <% if (stats.total_billed_quantity - stats.total_estimated_quantity) > 1 %>
+            <li class="flexitem2 redcolor"><%= stats.total_billed_quantity - stats.total_estimated_quantity %></li>
+            <% else %>
+            <li class="flexitem2"><%= stats.total_billed_quantity - stats.total_estimated_quantity %></li>
+            <% end %>
+          </ul>
+        </li>
+        <% end %>
+      </ul>
+
+       <% end %>
+</div>
+<% end %>
+
+
+
+
+

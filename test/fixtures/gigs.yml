@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  price: MyString
+  decimal: MyString
+  source: MyString
+  month: 2018-09-19
+  year: 2018-09-19
+  quantity_interne: 1
+  quantity_edt: 1
+
+two:
+  title: MyString
+  price: MyString
+  decimal: MyString
+  source: MyString
+  month: 2018-09-19
+  year: 2018-09-19
+  quantity_interne: 1
+  quantity_edt: 1

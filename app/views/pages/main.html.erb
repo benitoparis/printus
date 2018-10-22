@@ -1,0 +1,16 @@
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.unsplash.com/photo-1526633731461-c7903581c0bd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1c06a3764f00be9f50bc270c59c98b0d&auto=format&fit=crop&w=1350&q=80');">
+  <div class="banner-content">
+    <h1>PRINTus</h1>
+    <p>Automated invoice checking </p>
+
+
+    <% if user_signed_in? %>
+    <%= link_to 'Dashboard', gig_index_path, class:'btn btn-success btn-lg'%>
+    <% else %>
+    <%= link_to 'Log In',new_user_session_path, class:'btn btn-primary btn-lg'%>
+    <% end %>
+
+  </div>
+</div>
+
+
