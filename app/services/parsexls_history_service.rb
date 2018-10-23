@@ -45,7 +45,7 @@ class ParsexlsHistoryService
       @gig = Gig.new(title: item[0], price: item[1], source: item[2], year: item[3], month: item[4], quantity_interne:item[5], quantity_edt:item[6])
       @gig.save!
     end
-    redirect_to gig_index_path
+
 
   end
 end

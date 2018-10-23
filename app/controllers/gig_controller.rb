@@ -122,15 +122,16 @@ class GigController < ApplicationController
     #end
   end
 
-  def self.retrieve_history_data_from_2012
-    results = ParsexlsHistoryService.parse
-    results.each do |item|
-      @gig = Gig.new(title: item[0], price: item[1], source: item[2], year: item[3], month: item[4], quantity_interne:item[5], quantity_edt:item[6])
-      @gig.save!
-    end
-    redirect_to gig_index_path
-  end
+  def retrieve_history_data_from_2012
 
+
+    if Gig.last.nil?
+
+      results = ParsexlsHistoryService.parse
+
+    end
+  redirect_to gig_index_path
+  end
 
   def self.fill_in_csv_with_displayed_gigs
     DownloadModelGigIntoCsv.fill_in_csv

@@ -103,33 +103,33 @@ puts "good #{dir.last}"
         # no-op
     end
 
+      price = ParseXlsxGrilleTarif.parse
 
-
-      items_edt << {title: "#1 - Archives uniquement", value: xlsx.excelx_value(5, coltab)  == nil ? 0 : xlsx.excelx_value(5, coltab) }
-      items_edt << {title: "#2 - Original PFP vers Annonceur avec archivage", value: xlsx.excelx_value(7, coltab) == nil ? 0 : xlsx.excelx_value(7, coltab) }
-      items_edt << {title: "#3 - Original PDF vers Editique avec archivage", value: xlsx.excelx_value(9, coltab) == nil ? 0 : xlsx.excelx_value(9, coltab) }
-      items_edt << {title: "#4 - Copie PFP vers Agence sans archivage", value: xlsx.excelx_value(11, coltab) == nil ? 0 : xlsx.excelx_value(11, coltab) }
-      items_edt << {title: "#5 - Copie PDF vers Editique sans archivage", value: xlsx.excelx_value(13, coltab) == nil ? 0 : xlsx.excelx_value(13, coltab) }
-      items_edt << {title: "#6 - Copie PDF vers Agence sans archivage", value: xlsx.excelx_value(15, coltab) == nil ? 0 : xlsx.excelx_value(15, coltab) }
-      items_edt << {title: "#7 - Composition  & Personnalisation N&B", value: xlsx.excelx_value(17, coltab) == nil ? 0 : xlsx.excelx_value(17, coltab) }
-      items_edt << {title: "#8 - Traitement forfait (prise en charge Laser) 12 envois", value: xlsx.excelx_value(19, coltab) == nil ? 0 : xlsx.excelx_value(19, coltab) }
-      items_edt << {title: "#9 - Papier Blanc 80 gr", value: xlsx.excelx_value(21,coltab) == nil ? 0 : xlsx.excelx_value(21, coltab) }
-      items_edt << {title: "#10 - Traitement/Tri Regroupement", value: xlsx.excelx_value(23, coltab) == nil ? 0 : xlsx.excelx_value(23, coltab) }
-      items_edt << {title: "#11 - Fournitures C5 mécanisable-fenêtres", value: xlsx.excelx_value(25, coltab) == nil ? 0 : xlsx.excelx_value(25, coltab) }
-      items_edt << {title: "#12 - 1er pli C5 mécanisable-fenêtres", value: xlsx.excelx_value(27, coltab) == nil ? 0 : xlsx.excelx_value(27, coltab) }
-      items_edt << {title: "#13 - Plis >1 C5 mécanisable-fenêtres", value: xlsx.excelx_value(29, coltab) == nil ? 0 : xlsx.excelx_value(29, coltab) }
-      items_edt << {title: "#14 - Fourniture C4 à fenêtres", value: xlsx.excelx_value(31, coltab) == nil ? 0 : xlsx.excelx_value(31, coltab) }
-      items_edt << {title: "#15 - Pli manuel C4 à fenêtres", value: xlsx.excelx_value(33, coltab) == nil ? 0 : xlsx.excelx_value(33, coltab) }
-      items_edt << {title: "#16 - Fourniture C4 à soufflet avec imp.adresse", value: xlsx.excelx_value(35,coltab) == nil ? 0 : xlsx.excelx_value(35, coltab) }
-      items_edt << {title: "#17 - Pli manuel C4 à soufflet", value: xlsx.excelx_value(37, coltab) == nil ? 0 : xlsx.excelx_value(37, coltab) }
-      items_edt << {title: "#18 - Timbres", value: xlsx.excelx_value(39, coltab) == nil ? 0 : xlsx.excelx_value(39, coltab) }
-      items_edt << {title: "#19 - Dépôt La Poste", value: xlsx.excelx_value(40, coltab) == nil ? 0 : xlsx.excelx_value(40, coltab) }
-      items_edt << {title: "#20 - Gestion des PND", value: xlsx.excelx_value(42, coltab) == nil ? 0 : xlsx.excelx_value(42, coltab) }
-      items_edt << {title: "#21 - Livraison par coursier intramuros", value: xlsx.excelx_value(44, coltab) == nil ? 0 : xlsx.excelx_value(44, coltab) }
-      items_edt << {title: "#22 - Livraison par coursier 77a-78a-91a-95a", value: xlsx.excelx_value(46, coltab) == nil ? 0 : xlsx.excelx_value(46, coltab) }
-      items_edt << {title: "#23 - Livraison par coursier 77b-78b-91b-95b", value: xlsx.excelx_value(48, coltab) == nil ? 0 : xlsx.excelx_value(48, coltab) }
-      items_edt << {title: "#24 - Livraison par coursier 92-93-94", value: xlsx.excelx_value(50, coltab) == nil ? 0 : xlsx.excelx_value(50, coltab) }
-      items_edt << {title: "#26 - Logistique courrier industriel (par enveloppe)", value: xlsx.excelx_value(52, coltab) == nil ? 0 : xlsx.excelx_value(52, coltab) }
+      items_edt << {title: "#1 - Archives uniquement", value: xlsx.excelx_value(5, coltab)  == nil ? 0 : xlsx.excelx_value(5, coltab), price: price[0] }
+      items_edt << {title: "#2 - Original PFP vers Annonceur avec archivage", value: xlsx.excelx_value(7, coltab) == nil ? 0 : xlsx.excelx_value(7, coltab), price: price[1] }
+      items_edt << {title: "#3 - Original PDF vers Editique avec archivage", value: xlsx.excelx_value(9, coltab) == nil ? 0 : xlsx.excelx_value(9, coltab), price: price[2] }
+      items_edt << {title: "#4 - Copie PFP vers Agence sans archivage", value: xlsx.excelx_value(11, coltab) == nil ? 0 : xlsx.excelx_value(11, coltab), price: price[3] }
+      items_edt << {title: "#5 - Copie PDF vers Editique sans archivage", value: xlsx.excelx_value(13, coltab) == nil ? 0 : xlsx.excelx_value(13, coltab),price: price[4] }
+      items_edt << {title: "#6 - Copie PDF vers Agence sans archivage", value: xlsx.excelx_value(15, coltab) == nil ? 0 : xlsx.excelx_value(15, coltab) ,price: price[5] }
+      items_edt << {title: "#7 - Composition  & Personnalisation N&B", value: xlsx.excelx_value(17, coltab) == nil ? 0 : xlsx.excelx_value(17, coltab) ,price: price[6]}
+      items_edt << {title: "#8 - Traitement forfait (prise en charge Laser) 12 envois", value: xlsx.excelx_value(19, coltab) == nil ? 0 : xlsx.excelx_value(19, coltab) ,price: price[7]}
+      items_edt << {title: "#9 - Papier Blanc 80 gr", value: xlsx.excelx_value(21,coltab) == nil ? 0 : xlsx.excelx_value(21, coltab) ,price: price[8]}
+      items_edt << {title: "#10 - Traitement/Tri Regroupement", value: xlsx.excelx_value(23, coltab) == nil ? 0 : xlsx.excelx_value(23, coltab) ,price: price[9]}
+      items_edt << {title: "#11 - Fournitures C5 mécanisable-fenêtres", value: xlsx.excelx_value(25, coltab) == nil ? 0 : xlsx.excelx_value(25, coltab) ,price: price[10]}
+      items_edt << {title: "#12 - 1er pli C5 mécanisable-fenêtres", value: xlsx.excelx_value(27, coltab) == nil ? 0 : xlsx.excelx_value(27, coltab) ,price: price[11] }
+      items_edt << {title: "#13 - Plis >1 C5 mécanisable-fenêtres", value: xlsx.excelx_value(29, coltab) == nil ? 0 : xlsx.excelx_value(29, coltab) ,price: price[12]}
+      items_edt << {title: "#14 - Fourniture C4 à fenêtres", value: xlsx.excelx_value(31, coltab) == nil ? 0 : xlsx.excelx_value(31, coltab) ,price: price[13]}
+      items_edt << {title: "#15 - Pli manuel C4 à fenêtres", value: xlsx.excelx_value(33, coltab) == nil ? 0 : xlsx.excelx_value(33, coltab) ,price: price[14]}
+      items_edt << {title: "#16 - Fourniture C4 à soufflet avec imp.adresse", value: xlsx.excelx_value(35,coltab) == nil ? 0 : xlsx.excelx_value(35, coltab) ,price: price[15]}
+      items_edt << {title: "#17 - Pli manuel C4 à soufflet", value: xlsx.excelx_value(37, coltab) == nil ? 0 : xlsx.excelx_value(37, coltab) ,price: price[16]}
+      items_edt << {title: "#18 - Timbres", value: xlsx.excelx_value(39, coltab) == nil ? 0 : xlsx.excelx_value(39, coltab) ,price: price[17]}
+      items_edt << {title: "#19 - Dépôt La Poste", value: xlsx.excelx_value(40, coltab) == nil ? 0 : xlsx.excelx_value(40, coltab) ,price: price[18]}
+      items_edt << {title: "#20 - Gestion des PND", value: xlsx.excelx_value(42, coltab) == nil ? 0 : xlsx.excelx_value(42, coltab) ,price: price[19]}
+      items_edt << {title: "#21 - Livraison par coursier intramuros", value: xlsx.excelx_value(44, coltab) == nil ? 0 : xlsx.excelx_value(44, coltab) ,price: price[20]}
+      items_edt << {title: "#22 - Livraison par coursier 77a-78a-91a-95a", value: xlsx.excelx_value(46, coltab) == nil ? 0 : xlsx.excelx_value(46, coltab) ,price: price[21]}
+      items_edt << {title: "#23 - Livraison par coursier 77b-78b-91b-95b", value: xlsx.excelx_value(48, coltab) == nil ? 0 : xlsx.excelx_value(48, coltab) ,price: price[22]}
+      items_edt << {title: "#24 - Livraison par coursier 92-93-94", value: xlsx.excelx_value(50, coltab) == nil ? 0 : xlsx.excelx_value(50, coltab) ,price: price[23]}
+      items_edt << {title: "#26 - Logistique courrier industriel (par enveloppe)", value: xlsx.excelx_value(52, coltab) == nil ? 0 : xlsx.excelx_value(52, coltab) ,price: price[25]}
 
 
 
@@ -148,7 +148,7 @@ puts "good #{dir.last}"
 
     #on itère sur le tableau ditem et on insert les nouvelles prestations dans le model gig
     items_edt.each do |item|
-      @gig = Gig.new(title: item[:title], price: 0, source: 0, year: year, month: month, quantity_interne: 0, quantity_edt: item[:value])
+      @gig = Gig.new(title: item[:title], price: item[:price], source: 0, year: year, month: month, quantity_interne: 0, quantity_edt: item[:value])
       @gig.save!
       end
 

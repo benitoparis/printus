@@ -13,6 +13,6 @@ Rails.application.routes.draw do
   root to: 'pages#main', as: 'main'
   get 'retrieve', to: 'gig#retrieve_new_monthly_datas', as: 'retrieve'
 
-
+  get 'history', to: 'gig#retrieve_history_data_from_2012', as: 'history'
 
 end
