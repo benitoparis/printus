@@ -146,10 +146,32 @@
         <% end %>
       </ul>
 
-       <% end %>
+    <% end %>
+
 </div>
 <% end %>
 
+
+<h2> Evolution annuelle des quantités facturées </h2>
+<div class="dashboard">
+  <ul class="row header">
+    <li class="col col-lg-3">Année</li>
+    <li class="col col-lg-3">Quantité estimée</li>
+    <li class="col col-lg-3">Quantité facturée EDT</li>
+    <li class="col col-lg-3">Delta</li>
+  </ul>
+
+  <% @stats_evolution.each do |item| %>
+   <ul class="row">
+    <li class="col col-lg-3"><%= item.year %></li>
+    <li class="col col-lg-3"><%= item.total_estimated_quantity %></li>
+    <li class="col col-lg-3"><%= item.total_billed_quantity %></li>
+    <li class="col col-lg-3"><%= item.delta %></li>
+  </ul>
+  <% end %>
+  </ul>
+
+</div>
 
 
 

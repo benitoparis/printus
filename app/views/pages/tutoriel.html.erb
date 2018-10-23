@@ -1,14 +1,54 @@
 <div class="container">
 <h1>Tutoriel</h1>
-
-<H2>Modification de constantes</H2>
+<br>
+<H4>Modification des constantes</H4>
 <p>Dans le cas ou les formats des fichiers XLS, XLS ou le paramétrage d'accès à la base APOF changeraient, il existe un fichier de config modifiable</p>
 <p> Aller dans l'arborescence de l'application et ouvrir le fichier
 config/initializers/my_constant.rb"
 </p>
 
-<p>Ergo ego senator inimicus, si ita vultis, homini, amicus esse, sicut semper fui, rei publicae debeo. Quid? si ipsas inimicitias, depono rei publicae causa, quis me tandem iure reprehendet, praesertim cum ego omnium meorum consiliorum atque factorum exempla semper ex summorum hominum consiliis atque factis mihi censuerim petenda.</p>
+<h4>Mettre à jour les données d'un mois M-1</h4>
+<p>Afin de mettre à jours les données EDT, CECURITY et APOF procéder ainsi</p>
 
-<p>Ergo ego senator inimicus, si ita vultis, homini, amicus esse, sicut semper fui, rei publicae debeo. Quid? si ipsas inimicitias, depono rei publicae causa, quis me tandem iure reprehendet, praesertim cum ego omnium meorum consiliorum atque factorum exempla semper ex summorum hominum consiliis atque factis mihi censuerim petenda.</p>
+<ul>
+<li> - Cliquer sur le lien "Mettre à jour" accessible depuis la barre de navigation.</li>
+<li> - Selectionner le mois et l'année à mettre à jour.</li>
+<li> - Uploader le dernier fichier XLS semestriel envoyé par EDT</li>
+<li> - Uploader tous les fichiers CSV envoyés par CECURITY pour mettre à jour ce mois M</li>
+<li> - Cliquez sur "Envoyer"</li>
+<li> - Cliquer sur "insérer les données", étape indispensable pour enregsitrer les données en base</li>
+</ul>
+
+<p> Si par erreur vous n'avez pas uploadé tous les fichiers pour le mois en question, réeitérer l'opération. L'application écrase toutes les entrées enregistrées précédement pour ce mois M<br>
+
+<p> Lors de ce processus la base de données APOF est également appelée afin de mettre à jour les six premiers items de la colonne "quantité estimée" pour les items ci-dessous:<br>
+
+
+#1 - Archives uniquement<br>
+#2 - Original PFP vers Annonceur avec archivage<br>
+#2 - Original PFP vers Annonce<br>
+#2 - Original PFP vers Annonce
+#3 - Original PDF vers Editique avec archivage<br>
+#2 - Original PFP vers Annonce
+#4 - Copie PFP vers Agence sans archivage<br>
+#2 - Original PFP vers Annonce
+#5 - Copie PDF vers Editique sans archivage<br>
+#2 - Original PFP vers Annonce
+#6 - Copie PDF vers Agence sans archivage<br>
+#2 - Original PFP vers Annonce
+</p>
+
+<h4>Comparer les quantités estimées et celles facturées par le prestataire EDT</h4>
+<p> Après avoir uploadé les données EDT, CECURITY et APOF via l'étape ci-dessous, vous pourrez vérifier si les volumes facturés par EDT sont correctes.</p>
+<p> Cliquez sur lien "Tableau"</p>
+<p> Selectionnez l'année et le mois que vous souhaitez vérifier</p>
+<p> S'il existe une différence entre les quantités estimées par M6 et les quantités facturées apr EDT, vous pourrez l'observer dans la colonne delta.</p>
+<p> Lorsque la celulle de la colonne "delta" s'affiche en rouge, cela signife qu'EDT a facturé plus que ce qu'il n'aurait dû.</p>
+
+<p> Notez que vous trouverez également sur cette même page l'évolution annuelle des quantités facturées. </p>
+
+<h4>Récupérer toutes les données au format CSV</h4>
+<p> Cliquez sur le lien "tableau", accessible depuis la barre de navigation puis Cliquez sur "Télécharger l'historique des données".</p>
+<p> Vous disposerez alors de toutes les données saisies depuis 2012, y compris celles mises à jour depuis l'application PrintUs.</p>
 
 </div>

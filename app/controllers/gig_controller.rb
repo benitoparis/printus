@@ -34,6 +34,13 @@ class GigController < ApplicationController
     FROM gigs WHERE year = @year")
 
 
+   @stats_evolution = Gig.find_by_sql("SELECT
+    year,
+    SUM(quantity_interne) AS total_estimated_quantity,
+    SUM(quantity_edt) AS total_billed_quantity,
+    (SUM(quantity_interne) - SUM(quantity_edt)) AS delta
+    FROM gigs GROUP BY year ORDER BY year DESC")
+
 
 =begin      @stats_per_month = Gig.select("
       title,
@@ -74,7 +81,11 @@ class GigController < ApplicationController
       #@selectedgig.update(quantity_interne: item[:value])
     #end
 
-    #UpdateInvoiceDeliveryOptions.update(year.to_i, month.to_i)
+
+
+
+    #QueryOracleApofService.query(year.to_i, month.to_i)
+
 
     #On met à jour le CSV de données globale
     DownloadModelGigIntoCsv.fill_in_csv
